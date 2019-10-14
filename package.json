@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
-    "antd": "^3.8.1",
+    "antd": "^3.23.6",
     "axios": "^0.18.0",
     "babel-plugin-import": "^1.8.0",
     "babel-plugin-inline-import": "^3.0.0",
@@ -16,7 +16,7 @@
     "koa-router": "^7.4.0",
     "koa2-connect": "^1.0.2",
     "koa2-proxy-middleware": "0.0.4",
-    "next": "^7.0.2",
+    "next": "^9.1.1",
     "next-redux-wrapper": "^2.0.0",
     "qs": "^6.6.0",
     "react": "^16.6.3",
