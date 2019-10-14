@@ -1,0 +1,39 @@
+{
+  "name": "next",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "antd": "^3.8.1",
+    "axios": "^0.18.0",
+    "babel-plugin-import": "^1.8.0",
+    "babel-plugin-inline-import": "^3.0.0",
+    "cowsay-browser": "^1.1.8",
+    "express": "^4.16.4",
+    "http-proxy-middleware": "^0.19.0",
+    "koa": "^2.6.2",
+    "koa-router": "^7.4.0",
+    "koa2-connect": "^1.0.2",
+    "koa2-proxy-middleware": "0.0.4",
+    "next": "^7.0.2",
+    "next-redux-wrapper": "^2.0.0",
+    "qs": "^6.6.0",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-redux": "^5.0.1",
+    "redux": "^3.6.0",
+    "redux-actions": "^2.6.4",
+    "redux-devtools-extension": "^2.13.6",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.1.0"
+  },
+  "scripts": {
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "next start"
+  },
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
+}
