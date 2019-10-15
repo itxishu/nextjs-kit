@@ -2,7 +2,7 @@
 import axios from 'axios'
 import qs from 'qs'
 
-const baseURL = 'http://localhost:3008/v1'
+const baseURL = ''
 const request = axios.create({
   baseURL,
 })

@@ -1,7 +1,6 @@
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 import Link from 'next/link'
 import React, { Component } from 'react'
-import docAction, { list, categories } from '../../store/actions/doc'
 import { connect } from 'react-redux'
 const { Header, Content, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -55,23 +54,11 @@ class CommonSider extends Component {
 }
 
 
-// import Clock from './clock'
-// import Counter from './counter'
-
-// function Examples ({ lastUpdate, light }) {
-//   return (
-//     <div>
-//       <Clock lastUpdate={lastUpdate} light={light} />
-//       <Counter />
-//     </div>
-//   )
-// }
-
 function mapStateToProps(state) {
   console.log('777', state)
   const { categories } = state
   return state
   // return { categories: doc.categories }
 }
-const mapDispatchToProps = () => ({ ...docAction })
+const mapDispatchToProps = () => ({ })
 export default connect(mapStateToProps, mapDispatchToProps)(CommonSider)

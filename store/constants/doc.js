@@ -1,5 +1,0 @@
-export const ADD = 'ADD'
-export const MINUS = 'MINUS'
-export const LIST = 'LIST'
-export const CATEGORIES = 'CATEGORIES'
-export const POSTS = 'POSTS'

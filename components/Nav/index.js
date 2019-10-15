@@ -16,7 +16,7 @@ export default class Nav extends Component {
         >
           <Menu.Item key="1"><Link href="/doc"><a>doc</a></Link></Menu.Item>
           <Menu.Item key="2"><Link href="/about"><a>about</a></Link></Menu.Item>
-          <Menu.Item key="3">nav 3</Menu.Item>
+          <Menu.Item key="3"><Link href="/demo"><a>rematch demo</a></Link></Menu.Item>
         </Menu>
       </Header>
     )
