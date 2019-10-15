@@ -1,42 +1,33 @@
 import React from 'react'
-import docAction, { list } from '../store/actions/doc'
 import { connect } from 'react-redux'
 import Layout from '../components/layout'
 class Index extends React.Component {
   static getInitialProps({ store, isServer }) {
-    // return docAction.list();
-    return store.dispatch(list());
-  }
-
-  componentDidMount() {
-    this.props.list()
-  }
-
-  componentWillUnmount() {
-
+    console.log('index-getInitialProps',store, this.props)
+    store.dispatch.home.query()
   }
 
   render() {
-    console.log(this.props)
-    if (!this.props.doc.posts) return <div> hah </div>
+    console.log('home-props', this.props)
     return (
       <div>
-        {this.props.doc.posts.map((item, index) => {
-          return <div key={index}>{item.title.rendered}</div>
+        {this.props.list && this.props.list.map((item, index) => {
+          return <div key={index}>{item.message}</div>
         })}
-        <Layout>
+        {/* <Layout>
           <div>Hello World.</div>
-        </Layout>
+        </Layout> */}
+        123
       </div>
     )
   }
 }
 function mapStateToProps(state) {
-  console.log('state5555', state)
-  const { categories } = state
-  return state
-  // return { categories: doc.categories }
+  const { home } = state
+  return {...home}
 }
 // const mapStateToProps = state => state
-const mapDispatchToProps = () => ({ ...docAction })
+const mapDispatchToProps = dispatch => ({ 
+  query: () => dispatch.home.query()
+})
 export default connect(mapStateToProps, mapDispatchToProps)(Index)

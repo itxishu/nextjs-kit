@@ -2,7 +2,7 @@
 import axios from 'axios'
 import qs from 'qs'
 
-const baseURL = 'http://api.rdhub.cn/xcx/'
+const baseURL = 'http://localhost:3008/v1'
 const request = axios.create({
   baseURL,
 })
@@ -27,5 +27,11 @@ request.post = (url, data) => axios({
     'X-Requested-With': 'XMLHttpRequest',
     'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
   },
+})
+
+request.get = (url, data) => axios({
+  method: 'get',
+  url: baseURL + url,
+  params: qs.stringify(data),
 })
 export default request
