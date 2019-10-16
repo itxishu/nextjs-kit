@@ -1,8 +1,12 @@
-import { createStore, applyMiddleware } from 'redux'
-import { composeWithDevTools } from 'redux-devtools-extension'
-import thunkMiddleware from 'redux-thunk'
-import rootReducer from './reducers'
+import { init } from '@rematch/core';
+import createLoadingPlugin from '@rematch/loading';
+import models from './loader';
 
-export const initStore = (initialState) => {
-  return createStore(rootReducer, initialState, composeWithDevTools(applyMiddleware(thunkMiddleware)))
-}
+const loadingPlugin = createLoadingPlugin();
+
+const initStore = () =>
+  init({
+    plugins: [loadingPlugin],
+    models
+  });
+export default initStore;

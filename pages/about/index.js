@@ -1,7 +1,11 @@
-// import Layout from '../components/layout'
+import React, { Component } from 'react'
 
-// export default () => (
-//   <Layout>
-//     <div>Hello about.</div>
-//   </Layout>
-// )
+export default class index extends Component {
+  render() {
+    return (
+      <div>
+        About
+      </div>
+    )
+  }
+}
