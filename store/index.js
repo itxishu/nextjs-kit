@@ -1,13 +1,12 @@
-import { init } from '@rematch/core'
-import createLoadingPlugin from '@rematch/loading'
-import models from './loader'
-const loadingPlugin = createLoadingPlugin()
+import { init } from '@rematch/core';
+import createLoadingPlugin from '@rematch/loading';
+import models from './loader';
 
-const initStore = preloadedState =>
+const loadingPlugin = createLoadingPlugin();
+
+const initStore = () =>
   init({
     plugins: [loadingPlugin],
-    models,
-  })
-export default initStore
-
-
+    models
+  });
+export default initStore;
