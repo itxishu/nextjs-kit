@@ -17,15 +17,15 @@ Sentry.init({
 // 客户端跨域代理
 const proxyTable = {
   '/v1': {
-    target: 'http://api.rdhub.cn',
+    target: 'http://api.shudong.wamg',
     changeOrigin: true
   },
   '/wp': {
-    target: 'http://api.rdhub.cn',
+    target: 'http://api.shudong.wang',
     changeOrigin: true
   },
   '/xcx': {
-    target: 'http://api.rdhub.cn',
+    target: 'http://api.shudong.wang',
     changeOrigin: true
   }
 };

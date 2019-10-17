@@ -1,33 +1,28 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import Layout from '../../components/layout'
-class Doc extends React.Component {
+import React from 'react';
+import { connect } from 'react-redux';
+import Layout from '../../components/Layout';
+
+class Index extends React.Component {
   static getInitialProps({ store, isServer }) {
-    // return docAction.list();
-    // return store.dispatch(categories());
+    const a = 123;
   }
 
   render() {
-    console.log(this.props)
-    if (!this.props.doc) return <div> hah </div>
     return (
       <div>
-        {this.props.doc.posts.map((item, index) => {
-          return <div key={index}>{item.title.rendered}</div>
-        })}
         <Layout>
-          <div>Hello World.</div>
+          <div>Hello doc.</div>
         </Layout>
       </div>
-    )
+    );
   }
 }
 function mapStateToProps(state) {
-  console.log('777', state)
-  const { categories } = state
-  return state
-  // return { categories: doc.categories }
+  return state;
 }
 // const mapStateToProps = state => state
-const mapDispatchToProps = () => ({  })
-export default connect(mapStateToProps, mapDispatchToProps)(Doc)
+const mapDispatchToProps = dispatch => ({});
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Index);

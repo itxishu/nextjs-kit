@@ -29,6 +29,9 @@ module.exports = {
     }
   },
   extends: ['airbnb-base', 'prettier', 'prettier/react'],
+  globals: {
+    React: 'writable'
+  },
   rules: {
     'no-underscore-dangle': 1,
     'prefer-destructuring': 1,

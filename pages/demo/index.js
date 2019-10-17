@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button } from 'antd';
+import Layout from '../../components/Layout';
 
 class Demo extends Component {
   static async getInitialProps({ store }) {
@@ -14,7 +15,7 @@ class Demo extends Component {
   render() {
     console.log('home-props', this.props);
     return (
-      <div>
+      <Layout>
         <Button type="primary" onClick={this.getList}>
           GetData
         </Button>
@@ -22,7 +23,7 @@ class Demo extends Component {
           this.props.list.map((item, index) => {
             return <div key={index}>{item.title}</div>;
           })}
-      </div>
+      </Layout>
     );
   }
 }

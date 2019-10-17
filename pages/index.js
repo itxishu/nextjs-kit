@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 
 class Index extends React.Component {
   static getInitialProps({ store, isServer }) {
@@ -8,7 +8,6 @@ class Index extends React.Component {
   }
 
   render() {
-    console.log('home-props', this.props);
     return (
       <div>
         {this.props.list &&
@@ -16,7 +15,7 @@ class Index extends React.Component {
             return <div key={index}>{item.message}</div>;
           })}
         <Layout>
-          <div>Hello World.</div>
+          <div>基于nextjs的服务端渲染脚手架</div>
         </Layout>
       </div>
     );
