@@ -2,10 +2,25 @@
 
 基于 react 的 nextjs ssr 服务端渲染脚手架
 
-## 使用
+## 开发
 
 ```
 yarn
+```
+
+```
+npm run dev
+```
+
+## 部署
+
+
+```
+yarn
+```
+
+```
+npm run build
 ```
 
 > 启动
@@ -14,7 +29,6 @@ yarn
 npm start
 ```
 
-## 部署
 
 ## TODO
 
