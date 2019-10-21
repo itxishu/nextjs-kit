@@ -1,4 +1,5 @@
 **/dist/**
+**/build/**
 **/.next/**
 **/node_modules/**
 **/server.js

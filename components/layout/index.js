@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 import { withRouter } from 'next/router';
+import stylesheet from 'antd/dist/antd.min.css';
 import Nav from '../Nav';
 import CommonBreadcrumb from '../Breadcrumb';
 
@@ -9,9 +10,10 @@ const { SubMenu } = Menu;
 const { Content, Sider } = Layout;
 class layout extends React.Component {
   render(children, title = 'This is the default title') {
-    const {router} = this.props;
+    const { router } = this.props;
     return (
       <div>
+        <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
         <Head>
           <title>hi stark</title>
           <meta charSet="utf-8" />

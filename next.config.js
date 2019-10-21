@@ -1,27 +1,60 @@
-const withCss = require('@zeit/next-css');
+const withPlugins = require('next-compose-plugins');
+const stylus = require('@zeit/next-stylus');
+const css = require('@zeit/next-css');
 
-module.exports = withCss({
-  webpack: (config, { isServer }) => {
-    if (isServer) {
-      const antStyles = /antd\/.*?\/style\/css.*?/;
-      const origExternals = [...config.externals];
-      config.externals = [
-        (context, request, callback) => {
-          if (request.match(antStyles)) return callback();
-          if (typeof origExternals[0] === 'function') {
-            origExternals[0](context, request, callback);
-          } else {
-            callback();
-          }
-        },
-        ...(typeof origExternals[0] === 'function' ? [] : origExternals)
-      ];
+const dev = process.env.NODE_ENV !== 'production';
 
-      config.module.rules.unshift({
-        test: antStyles,
-        use: 'null-loader'
-      });
-    }
-    return config;
-  }
-});
+const localIdentName = dev ? '[local]-[hash:base64:5]' : '[hash:base64:5]';
+
+if (typeof require !== 'undefined') {
+  require.extensions['.css'] = file => {};
+}
+
+const nextConfig = {
+  distDir: 'dist'
+  // webpack: (config, { buildId, dev, isServer, defaultLoaders }) => {
+  //   config.module.rules.push({
+  //       test: /\.js$/,
+  //       enforce: 'pre',
+  //       include: [
+  //         path.resolve('components'),
+  //         path.resolve('pages'),
+  //         path.resolve('utils'),
+  //         path.resolve('constants'),
+  //         path.resolve('containers')
+  //       ],
+  //       options: {
+  //         configFile: path.resolve('.eslintrc'),
+  //         eslint: {
+  //           configFile: path.resolve(__dirname, '.eslintrc')
+  //         }
+  //       },
+  //       loader: 'eslint-loader'
+  //     });
+  // }
+};
+
+module.exports = withPlugins(
+  [
+    [
+      stylus,
+      {
+        cssModules: true,
+        cssLoaderOptions: {
+          importLoaders: 1,
+          localIdentName
+        }
+      }
+    ],
+    [
+      css,
+      {
+        cssModules: true,
+        cssLoaderOptions: {
+          localIdentName
+        }
+      }
+    ]
+  ],
+  nextConfig
+);

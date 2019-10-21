@@ -14,7 +14,6 @@ npm run dev
 
 ## 部署
 
-
 ```
 yarn
 ```
@@ -23,16 +22,18 @@ yarn
 npm run build
 ```
 
+> nginx 指向 dist 文件
+
 > 启动
 
 ```
 npm start
 ```
 
-
 ## TODO
 
 - [x] 支持 stylus
+- [x] 支持 css modules
 - [x] 基础布局
 - [x] 支持 antd
 - [x] api 跨域代理
@@ -41,3 +42,4 @@ npm start
 - [x] eslint
 - [x] sentry
 - [x] lint-staged
+- [x] pm2 配置

@@ -4,7 +4,7 @@ import App from 'next/app';
 import withRedux from 'next-redux-wrapper';
 import * as Sentry from '@sentry/browser';
 import initStore from '../store';
-import { SENTRY_DSN } from '../const';
+import { SENTRY_DSN } from '../utils/consts';
 
 Sentry.init({
   dsn: SENTRY_DSN

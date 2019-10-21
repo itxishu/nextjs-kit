@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node server.js",
+    "dev": "node server --mode dev",
+    "test": "node server",
+    "pre": "node server",
+    "prod": "node server",
     "build": "next build",
     "start": "next start -p 3600"
   },
@@ -14,6 +17,7 @@
     "@sentry/browser": "^5.7.1",
     "@sentry/node": "5.1.0",
     "@zeit/next-css": "^1.0.1",
+    "@zeit/next-stylus": "^1.0.1",
     "antd": "^3.23.6",
     "axios": "^0.18.0",
     "babel-plugin-import": "^1.8.0",
@@ -26,6 +30,7 @@
     "koa2-connect": "^1.0.2",
     "koa2-proxy-middleware": "0.0.4",
     "next": "^9.1.1",
+    "next-compose-plugins": "^2.2.0",
     "next-redux-wrapper": "^2.0.0",
     "null-loader": "^3.0.0",
     "qs": "^6.6.0",
