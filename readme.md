@@ -24,7 +24,7 @@ npm run build
 
 > nginx 指向 dist 文件
 
-> 启动
+##  启动
 
 ```
 npm start
@@ -38,8 +38,11 @@ npm start
 - [x] 支持 antd
 - [x] api 跨域代理
 - [x] 状态管理 rematch
-- [x] 环境配置
+- [x] env环境多环境切换配置
 - [x] eslint
 - [x] sentry
 - [x] lint-staged
 - [x] pm2 配置
+
+
+
