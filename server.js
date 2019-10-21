@@ -2,17 +2,15 @@ const Koa = require('koa');
 const next = require('next');
 const Router = require('koa-router');
 const port = parseInt(process.env.PORT, 10) || 3600;
-const dev = process.env.NODE_ENV !== 'production';
-const app = next({ dev });
-const handle = app.getRequestHandler();
 const proxyMiddleware = require('http-proxy-middleware');
 const c2k = require('koa2-connect');
 const Sentry = require('@sentry/node');
+const dev = process.env.NODE_ENV !== 'production';
+const app = next({ dev });
+const handle = app.getRequestHandler();
 
-const rawArgv = process.argv.slice(2);
+// console.log('process.env',process.env);
 
-console.log('rawArgv', rawArgv);
-// process.exit(1)
 Sentry.init({
   dsn: 'https://9e2cfa18f53141208603df482f91d77d@sentry.kaikeba.com/68'
 });

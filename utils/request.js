@@ -5,6 +5,7 @@ axios.defaults.timeout = 50000;
 axios.defaults.headers.common['Content-Type'] = 'application/json';
 axios.defaults.baseURL = 'https://api.shudong.wang/v1';
 
+console.log('process.envprocess.env',process.env);
 // 中间件 拦截请求-
 axios.interceptors.response.use(
   response => {

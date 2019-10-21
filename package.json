@@ -4,12 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node server --mode dev",
-    "test": "node server",
-    "pre": "node server",
-    "prod": "node server",
-    "build": "next build",
-    "start": "next start -p 3600"
+    "dev": "cross-env INIT_ENV=dev node server",
+    "test": "cross-env NODE_ENV=production INIT_ENV=test node server",
+    "pre": "cross-env NODE_ENV=production INIT_ENV=pre node server",
+    "prod": "cross-env NODE_ENV=production INIT_ENV=prod node server",
+    "build": "next build"
   },
   "dependencies": {
     "@rematch/core": "^1.2.0",
@@ -23,6 +22,7 @@
     "babel-plugin-import": "^1.8.0",
     "babel-plugin-inline-import": "^3.0.0",
     "cowsay-browser": "^1.1.8",
+    "cross-env": "^6.0.3",
     "express": "^4.16.4",
     "http-proxy-middleware": "^0.19.0",
     "koa": "^2.6.2",
@@ -41,7 +41,8 @@
     "redux-actions": "^2.6.4",
     "redux-devtools-extension": "^2.13.6",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.1.0"
+    "redux-thunk": "^2.1.0",
+    "webpack": "^4.41.2"
   },
   "husky": {
     "hooks": {

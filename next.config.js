@@ -1,9 +1,9 @@
 const withPlugins = require('next-compose-plugins');
 const stylus = require('@zeit/next-stylus');
 const css = require('@zeit/next-css');
-
+const { DefinePlugin } = require('webpack');
 const dev = process.env.NODE_ENV !== 'production';
-
+const { plugins } = require('./build/webpack.common')
 const localIdentName = dev ? '[local]-[hash:base64:5]' : '[hash:base64:5]';
 
 if (typeof require !== 'undefined') {
@@ -11,27 +11,11 @@ if (typeof require !== 'undefined') {
 }
 
 const nextConfig = {
-  distDir: 'dist'
-  // webpack: (config, { buildId, dev, isServer, defaultLoaders }) => {
-  //   config.module.rules.push({
-  //       test: /\.js$/,
-  //       enforce: 'pre',
-  //       include: [
-  //         path.resolve('components'),
-  //         path.resolve('pages'),
-  //         path.resolve('utils'),
-  //         path.resolve('constants'),
-  //         path.resolve('containers')
-  //       ],
-  //       options: {
-  //         configFile: path.resolve('.eslintrc'),
-  //         eslint: {
-  //           configFile: path.resolve(__dirname, '.eslintrc')
-  //         }
-  //       },
-  //       loader: 'eslint-loader'
-  //     });
-  // }
+  distDir: 'dist',
+  webpack: (config, { buildId, dev, isServer, defaultLoaders }) => {
+    config.plugins.push(...plugins)
+    return config
+  }
 };
 
 module.exports = withPlugins(
