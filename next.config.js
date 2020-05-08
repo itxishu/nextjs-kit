@@ -1,9 +1,11 @@
 const withPlugins = require('next-compose-plugins');
 const stylus = require('@zeit/next-stylus');
 const css = require('@zeit/next-css');
-const { DefinePlugin } = require('webpack');
+const withTM = require('next-transpile-modules');
+
 const dev = process.env.NODE_ENV !== 'production';
-const { plugins } = require('./build/webpack.common')
+const { plugins } = require('./build/webpack.common');
+
 const localIdentName = dev ? '[local]-[hash:base64:5]' : '[hash:base64:5]';
 
 if (typeof require !== 'undefined') {
@@ -12,14 +14,20 @@ if (typeof require !== 'undefined') {
 
 const nextConfig = {
   distDir: 'dist',
-  webpack: (config, { buildId, dev, isServer, defaultLoaders }) => {
-    config.plugins.push(...plugins)
-    return config
+  webpack: (config, { buildId, deve, isServer, defaultLoaders }) => {
+    config.plugins.push(...plugins);
+    return config;
   }
 };
 
 module.exports = withPlugins(
   [
+    // [
+    //   withTM,
+    //   {
+    //     transpileModules: ['@kkb/daji']
+    //   }
+    // ],
     [
       stylus,
       {
@@ -27,6 +35,14 @@ module.exports = withPlugins(
         cssLoaderOptions: {
           importLoaders: 1,
           localIdentName
+        },
+        postcssLoaderOptions: {
+          // parser: 'sugarss',
+          config: {
+            ctx: {
+              theme: JSON.stringify(process.env.REACT_APP_THEME)
+            }
+          }
         }
       }
     ],
