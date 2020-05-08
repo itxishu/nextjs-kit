@@ -1,20 +1,20 @@
 cache:
-    key: ${CI_BUILD_REF_SLUG}
-    paths:
-        - node_modules/
+  key: ${CI_BUILD_REF_SLUG}
+  paths:
+    - node_modules/
 
 before_script:
-    # 在安装的时候不执行package.json里的prepublish, 防止每个job都要执行一次
-    - npm install --ignore-scripts
+  # 在安装的时候不执行package.json里的prepublish, 防止每个job都要执行一次
+  - npm install --ignore-scripts
 
 stages:
-    - build
+  - build
 
 job_build:
-    stage: build
-    script: npm run build:prod 
-    tags:
-        - mall-build-prod
-    only:
-        - publish
-        - master
+  stage: build
+  script: npm run build:prod
+  tags:
+    - nextjs-build-prod
+  only:
+    - publish
+    - master
