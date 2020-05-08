@@ -21,7 +21,7 @@
     "koa": "^2.11.0",
     "koa-router": "^7.4.0",
     "koa2-connect": "^1.0.2",
-    "next": "9.1.4",
+    "next": "9.3.6",
     "next-compose-plugins": "^2.2.0",
     "next-transpile-modules": "^2.3.1",
     "postcss-pxtorem": "^4.0.1",
