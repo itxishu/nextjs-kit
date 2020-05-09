@@ -2,7 +2,6 @@ import React from 'react';
 import Head from 'next/head';
 import classNames from 'classnames/bind';
 import { connect } from 'react-redux';
-import { Nav } from '../../components';
 import css from './styles.styl';
 
 const cx = classNames.bind(css);
@@ -87,7 +86,4 @@ const mapDispatch = dispatch => ({
   query: () => dispatch.demo.query()
 });
 
-export default connect(
-  mapState,
-  mapDispatch
-)(About);
+export default connect(mapState, mapDispatch)(About);
