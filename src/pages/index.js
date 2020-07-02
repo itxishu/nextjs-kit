@@ -11,7 +11,7 @@ const Home = ({ user }) => (
     </Head>
 
     <div className="hero">
-      <h1 className="title">Welcome to Next.js Home page!</h1>
+      <h1 className="title">Welcome to FIG-SSR Home page!</h1>
 
       <div className={styles.stark}>Hi {user.name}</div>
 
@@ -20,18 +20,18 @@ const Home = ({ user }) => (
       <div className="row">
         <a href="https://nextjs.top/docs" className="col-md-4 card">
           <h3>Documentation &rarr;</h3>
-          <p>Learn more about Next.js in the documentation.</p>
+          <p>Learn more about FIG-SSR in the documentation.</p>
         </a>
         <a href="https://nextjs.top/learn" className="col-md-4 card">
           <h3>Next.js Learn &rarr;</h3>
-          <p>Learn about Next.js by following an interactive tutorial!</p>
+          <p>Learn about FIG-SSR by following an interactive tutorial!</p>
         </a>
         <a
           href="https://github.com/zeit/next.js/tree/master/examples"
           className="col-md-4 card"
         >
           <h3>Examples &rarr;</h3>
-          <p>Find other example boilerplates on the Next.js GitHub.</p>
+          <p>Find other example boilerplates on the FIG-SSR GitHub.</p>
         </a>
       </div>
     </div>

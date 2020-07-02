@@ -15,7 +15,7 @@ const Sentry = require('@sentry/node');
 const dev = process.env.NODE_ENV === 'development';
 const app = next({ dev });
 
-const router = require('./server/routes')(app);
+const router = require('./node/routes')(app);
 const server = new Koa();
 // const handler = routes.getRequestHandler(app);
 // process.exit(1)
